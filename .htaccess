@@ -1,0 +1,85 @@
+#
+# Apache/PHP/Logiks settings:
+#
+
+# Protect files and directories from prying eyes.
+<FilesMatch "\.(yaml|lst|lic|dat|db|cfg|frm|rpt|page|dgn|engine|inc|info|install|make|module|profile|test|po|sh|sql|theme|tpl(\.php)?|xtmpl)$|^(\..*|Entries.*|Repository|Root|Tag|Template)$">
+  Order allow,deny
+</FilesMatch>
+
+<Files ~ "^\.(htaccess|htpasswd)$">
+	Deny from all
+</Files>
+
+# Don't show directory listings for URLs which map to a directory.
+Options -Indexes
+# Allow anyone except this list or maybe not
+Order deny,allow
+# Don't follow symbolic links in this directory.
+Options +FollowSymLinks
+# Multiviews creates problems with aliased URLs and is not needed for Logiks.
+Options -Multiviews
+
+# Set the default handler.
+DirectoryIndex index.php index.html index.htm
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	RewriteRule config/ - [F,L]
+	RewriteRule data/ - [F,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-l
+
+	RewriteRule .* index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+	BrowserMatch MSIE ie
+	Header set X-UA-Compatible "IE=Edge,chrome=1" env=ie
+	
+	# Send the Vary header to help crawl mobile content
+	Header append Vary User-Agent
+
+	Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+<IfModule mod_expires.c>
+	# Enable expirations
+	ExpiresActive On
+	# Default directive
+	ExpiresDefault "access plus 1 month"
+	# My favicon
+	ExpiresByType image/x-icon "access plus 1 year"
+	# Images
+	ExpiresByType image/gif "access plus 1 month"
+	ExpiresByType image/png "access plus 1 month"
+	ExpiresByType image/jpg "access plus 1 month"
+	ExpiresByType image/jpeg "access plus 1 month"
+	# CSS
+	ExpiresByType text/css "access 1 month"
+	# Javascript
+	ExpiresByType application/javascript "access 1 month"
+	# Media
+	ExpiresByType audio/mp3 "access plus 1 month"
+	ExpiresByType audio/mp4 "access plus 1 month"
+	# Others
+	ExpiresByType application/pdf "access 1 month"
+	ExpiresByType application/flv "access 1 month"
+</IfModule>
+
+# gzip compression.
+<IfModule mod_deflate.c>
+  # html, xml, css, and js:
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript text/javascript application/javascript application/x-javascript application/json
+  # webfonts and svg:
+  <FilesMatch "\.(ttf|otf|eot|svg)$" >
+    SetOutputFilter DEFLATE
+  </FilesMatch>
+</IfModule>
+
+<FilesMatch "\.(txt|html|htm|php|json)">
+    php_value output_handler ob_gzhandler
+</FilesMatch>
