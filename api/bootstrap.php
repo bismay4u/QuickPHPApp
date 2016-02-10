@@ -19,6 +19,12 @@ if(!function_exists("testFunc")) {
 	}
 	
 	function getConfig($cfg) {
+		$cfg=explode(".", $cfg);
+		if(count($cfg)<2) return "";
+
+		if(isset($_SESSION['JSONCONFIG']) && isset($_SESSION['JSONCONFIG'][$cfg[0]]) && isset($_SESSION['JSONCONFIG'][$cfg[0]][$cfg[1]])) {
+			return $_SESSION['JSONCONFIG'][$cfg[0]][$cfg[1]];
+		}
 		return "";
 	}
 	
