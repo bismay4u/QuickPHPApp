@@ -1,6 +1,6 @@
-# QuickPHPApp
+# Boilerplate-PHPApp
 
-Quick Prototyping Framework For PHP
+Following the principle SWAF : Simple Web Application Framework, this project is a boilerplate for quick prototyping of PHP apps and websites.
 
 ### Objective : 
 To create a simple morden framework that can be used to quickly prototype projects and concepts by coding, a concept for developer, by developer.
@@ -12,3 +12,5 @@ To create a simple morden framework that can be used to quickly prototype projec
 - Single app framework, no multiapp.
 - No default css, js frameworks.
 - Minimum zip size.
+- REST Support
+- Simple Plugins Architecture
