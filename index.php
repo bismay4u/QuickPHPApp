@@ -14,8 +14,14 @@ error_reporting(-1);
 include_once "api/bootstrap.php";
 include_once "app/config.php";
 
+
 define('PAGE_URI',current(explode("?", str_replace(ROOT, '', $_SERVER['DOCUMENT_ROOT'].$_SERVER['REQUEST_URI']))));
-define('PAGE_NAME',current(explode("/", PAGE_URI)));
+
+$page = current(explode("/", PAGE_URI));
+if($page==null || strlen($page)<=0) $page = "home";
+
+define('PAGE_NAME',$page);
+
 
 echo PAGE_NAME;
 ?>
