@@ -1,0 +1,23 @@
+{
+  "name": "QuickPHPApp",
+  "authors": [
+    "Bismay <bismay@smartinfologiks.com>"
+  ],
+  "description": "Rapid Application Development Framework",
+  "main": "index.php",
+  "keywords": [
+    "REST",
+    "API",
+    "Development"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
