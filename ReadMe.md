@@ -1,4 +1,4 @@
-# Boilerplate-PHPApp
+# QuickPHPApp
 
 Following the principle SWAF : Simple Web Application Framework, this project is a boilerplate for quick prototyping of PHP apps and websites.
 
