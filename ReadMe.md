@@ -5,6 +5,9 @@ Following the principle SWAF : Simple Web Application Framework, this project is
 ### Objective : 
 To create a simple morden framework that can be used to quickly prototype projects and concepts by coding, a concept for developer, by developer.
 
+### How to start :
+Just download the zip file, unzip it into target directory, run composer or bower to install required subcomponents and start building your application.
+
 ### Important Points : 
 - No CMS, no complex classes and rules, simplicity and developer friendly system.
 - No Database Connection directly in the framework, a plugin will provide that.
@@ -13,4 +16,8 @@ To create a simple morden framework that can be used to quickly prototype projec
 - No default css, js frameworks.
 - Minimum zip size.
 - REST Support
-- Simple Plugins Architecture
+- Uses popular vendors from composer and bower to extend the system.
+
+
+Thank you
+Bismay
