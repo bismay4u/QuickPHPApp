@@ -38,8 +38,8 @@ if(!file_exists($pageFile)) {
   	<title>Quick Framework</title>
 
 	<!-- start: META -->
-    <meta name='description' content='Business Resource Management Kit' />
-	<meta name='keywords' content='Business, Enterprise, Resource, Planning' />
+    <meta name='description' content='Quick PHP Framework' />
+	<meta name='keywords' content='Quick, PHP, Framework' />
 	<meta name='robots' content='no-follow' />
 	<!-- end: META -->
 
@@ -64,8 +64,8 @@ if(!file_exists($pageFile)) {
 	<link id="icon144" rel="icon" type="image/png" sizes="144x144" href="./media/logos/icon144.png"/>
 	<link id="icon192" rel="icon" type="image/png" sizes="192x192" href="./media/logos/icon192.png"/> -->
     
-    <!-- <link href='https://manage.smartinfologiks.net/misc/themes/default/reset.css' rel='stylesheet' type='text/css' />
-    <script src="js/scripts.js"></script> -->
+    <!-- <link href='app/assets/css/reset.css' rel='stylesheet' type='text/css' />
+    <script src="app/assets/js/scripts.js"></script> -->
 
     <link href='bower_components/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
 
