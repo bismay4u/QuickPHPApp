@@ -1,10 +1,7 @@
 <?php
 if(!defined('ROOT')) exit('No direct script access allowed');
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-
-if(!function_exists("testFunc")) {
+if(!function_exists("printArray")) {
 	function printArray($obj) {
 		return printObj($obj);
 	}
